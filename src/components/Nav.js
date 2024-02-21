@@ -7,18 +7,14 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-
 import Button from "@mui/material/Button";
-
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { useNavigate } from "react-router-dom";
 import { Authcontext } from "../App";
-import { Popover, Popconfirm, Modal } from "antd";
-import { QuestionCircleOutlined } from "@ant-design/icons";
+import { Popover, Modal } from "antd";
 import { useState } from "react";
-const pages = ["Home", "About", "Logout"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+
 const content = (
   <div>
     <p>from the developers desk</p>
@@ -27,49 +23,27 @@ const content = (
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
   const { authToken } = React.useContext(Authcontext);
   let navigate = useNavigate();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
   const handleLogout = () => {
     localStorage.removeItem("authToken");
     navigate("/");
     window.location.reload();
   };
-  const handleNavClick = (page) => {
-    if (page === "Home") {
-      navigate("/");
-    }
-    if (page === "About") {
-      navigate("/about");
-    }
 
-    if (page === "Logout") {
-      handleLogout();
-    }
-  };
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const showModal = () => {
     setIsModalOpen(true);
-  };
-
-  const handleOk = () => {
-    setIsModalOpen(false);
   };
 
   const handleCancel = () => {
@@ -127,7 +101,10 @@ function ResponsiveAppBar() {
                   <Typography textAlign="center">About</Typography>
                 </MenuItem>
                 <MenuItem
-                  onClick={() => ( window.open("https://memoadminpanel.web.app/", "_blank"), handleCloseNavMenu())}
+                  onClick={() => (
+                    window.open("https://memoadminpanel.web.app/", "_blank"),
+                    handleCloseNavMenu()
+                  )}
                 >
                   <Typography textAlign="center">AdminPanel</Typography>
                 </MenuItem>

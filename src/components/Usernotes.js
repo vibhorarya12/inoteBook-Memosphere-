@@ -5,8 +5,8 @@ import { notification } from "antd";
 import { SmileOutlined } from "@ant-design/icons";
 import LinearProgress from "@mui/material/LinearProgress";
 
-var host = process.env.REACT_APP_URL;
-console.log("host is :" +  host);
+const host = process.env.REACT_APP_URL;
+
 
 export default function Usernotes() {
   const [add, setadd] = useState(false);

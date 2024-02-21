@@ -4,18 +4,23 @@
 node_modules
 /.pnp
 .pnp.js
-
 # testing
 /coverage
 
 # production
-backend
-build
+# Ignore backend node_modules directory
+.env
+backend/node_modules/
+
+# Ignore backend .env file
+backend/.env
+
 
 #firebase
 firebase.json
 .firebaserc
 # misc
+.env
 .DS_Store
 .env.local
 .env.development.local

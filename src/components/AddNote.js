@@ -6,7 +6,7 @@ import {  notification } from 'antd';
 
 export default function AddNote(props) {
   const [note, setNote] = useState({ title: "", description: "", tag: "" });
-  const host = "https://cloudnotebook-deql.onrender.com";
+  const host = process.env.REACT_APP_URL;
   const [loading, setloading] = useState(false);
   const [api, contextHolder] = notification.useNotification();
 

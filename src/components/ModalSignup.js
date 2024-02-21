@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button, Modal, message } from "antd";
 import TextField from "@mui/material/TextField";
 import { Spin } from "antd";
-var host = process.env.REACT_APP_URL;
+const host = process.env.REACT_APP_URL;
 const ModalSignup = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [credentials, setCredentials] = useState({

@@ -5,10 +5,7 @@ import {motion} from 'framer-motion';
 import DeleteOutlined from '@ant-design/icons/DeleteOutlined';
 import FormOutlined from '@ant-design/icons/FormOutlined'
 function convertToCustomFormat(dateString) {
-  // Parse the input date string
   const dateObject = new Date(dateString);
-
-  // Options for formatting the date
   const options = {
     year: "numeric",
     month: "2-digit",
